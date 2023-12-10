@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.myapplicationkp25.activity2.SecondViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="@={viewModel.state.name}"
+            />
+
+        <TextView
+            android:id="@+id/autorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTextView"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="@={viewModel.state.autor}"
+            />
+
+        <TextView
+            android:id="@+id/yearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autorTextView"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="@={viewModel.state.year}"
+            />
+
+
+    </RelativeLayout>
+</layout>

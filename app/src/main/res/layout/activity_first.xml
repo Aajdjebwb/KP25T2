@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.myapplicationkp25.activity1.FirstViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="Ваша книга"
+            android:textAlignment="viewEnd"
+            android:textColor="#58085E"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/bookNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="Назва книги"
+            android:minHeight="60dp"
+            android:text="@={viewModel.state.name}"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/bookAutorEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookNameEditText"
+            android:layout_centerInParent="true"
+            android:hint="Автор"
+            android:text="@={viewModel.state.autor}"
+            android:minHeight="60dp"
+            />
+
+        <EditText
+            android:id="@+id/bookYearEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookAutorEditText"
+            android:layout_centerInParent="true"
+            android:hint="Рік"
+            android:text="@={viewModel.state.year}"
+            android:minHeight="60dp" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookYearEditText"
+            android:layout_centerInParent="true"
+            android:onClick="@{viewModel::OnButtonClick}"
+            android:text="Тик" />
+
+    </RelativeLayout>
+</layout>
